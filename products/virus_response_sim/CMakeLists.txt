@@ -5,6 +5,7 @@ find_package(glad CONFIG REQUIRED)
 find_package(SDL2 REQUIRED)
 
 add_executable(virus_response_sim
+        src/Platform.cpp
         src/main.cpp)
 
 target_include_directories(virus_response_sim PRIVATE include)
