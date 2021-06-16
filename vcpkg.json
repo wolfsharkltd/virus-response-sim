@@ -1,0 +1,13 @@
+{
+  "name": "virus-response-sim",
+  "version-string": "0.1-dev",
+  "dependencies": [
+    {
+      "name": "imgui",
+      "features": [
+        "glfw-binding",
+        "opengl3-glad-binding"
+      ]
+    }
+  ]
+}
