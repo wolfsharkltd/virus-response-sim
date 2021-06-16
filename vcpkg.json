@@ -2,6 +2,7 @@
   "name": "virus-response-sim",
   "version-string": "0.1-dev",
   "dependencies": [
+    "catch2",
     {
       "name": "imgui",
       "features": [
