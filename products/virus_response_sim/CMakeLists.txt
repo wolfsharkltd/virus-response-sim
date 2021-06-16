@@ -21,3 +21,5 @@ target_link_libraries(virus_response_sim PRIVATE
 )
 
 target_analyse_code(virus_response_sim)
+
+configure_file("fonts/verdana.ttf" "verdana.ttf" COPYONLY)

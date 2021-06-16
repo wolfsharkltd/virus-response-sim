@@ -112,8 +112,9 @@ bool Platform::Initialise()
     //io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 
     // Setup Dear ImGui style
-    ImGui::StyleColorsDark();
+    //ImGui::StyleColorsDark();
     //ImGui::StyleColorsClassic();
+    this->InitialiseStyle();
 
     // Setup Platform/Renderer backends
     ImGui_ImplSDL2_InitForOpenGL(window, gl_context);
@@ -137,6 +138,33 @@ bool Platform::Initialise()
     // Our state
 
     return true;
+}
+
+void Platform::InitialiseStyle()
+{
+    ImGuiStyle &style = ImGui::GetStyle();
+
+    style.WindowPadding                  = ImVec2(12, 12);
+    style.WindowRounding                 = 12.0f;
+    style.FramePadding                   = ImVec2(5, 7);
+    style.ItemSpacing                    = ImVec2(5, 5);
+
+    style.WindowBorderSize = 4.0f;
+    style.ScrollbarSize = 16.0f;
+    style.ScrollbarRounding = 12.0f;
+
+    style.Colors[ImGuiCol_Text]          = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
+    style.Colors[ImGuiCol_TextDisabled]  = ImVec4(0.50f, 0.50f, 0.50f, 1.00f);
+    style.Colors[ImGuiCol_WindowBg]      = ImVec4(0.06f, 0.06f, 0.06f, 0.94f);
+    style.Colors[ImGuiCol_Button]        = ImVec4(0.44f, 0.44f, 0.44f, 0.40f);
+    style.Colors[ImGuiCol_ButtonHovered] = ImVec4(0.46f, 0.47f, 0.48f, 1.00f);
+    style.Colors[ImGuiCol_ButtonActive]  = ImVec4(0.42f, 0.42f, 0.42f, 1.00f);
+
+    style.Colors[ImGuiCol_TitleBgActive] = ImVec4(0.19f, 0.30f, 0.79f, 1.00f);
+    style.Colors[ImGuiCol_Border]        = ImVec4(0.48f, 0.48f, 0.48f, 1.00f);
+
+
+    io->Fonts->AddFontFromFileTTF("verdana.ttf", 18.0f, NULL, NULL);
 }
 
 void Platform::Cleanup()
